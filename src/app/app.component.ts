@@ -9,6 +9,9 @@ import { Customer } from "./model";
 })
 
 export class AppComponent {
+  customer: Customer;
+  showAddress = true;
+
   regions = ['East', 'South', 'North', 'West', 'Northeast', 'Midwest'];
   states = ['California', 'Jalisco', 'Quebec', 'Illinois'];
 
@@ -53,9 +56,17 @@ export class AppComponent {
         region: 'Midwest'
       }
     },
+    {
+      id: 5,
+      name: 'Jim Jones',
+      address: {
+        street: '137 DeKoven Street',
+        city: 'Chicago',
+        state: 'Illinois',
+        region: 'Midwest'
+      }
+    }
   ];
 
-  customer: Customer;
-
-  hideAddress = false;
+  
 }

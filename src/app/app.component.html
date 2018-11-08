@@ -14,9 +14,8 @@
       <label>Name: </label><br />
       <input [(ngModel)]="customer.name"><br />
     </fieldset>
-
-    <label><input type="checkbox" [(ngModel)]="hideAddress" /> Hide Address </label>
-    <div [hidden]="hideAddress">
+    <label><input type="checkbox" [(ngModel)]="showAddress" /> Hide Address </label>
+    <div *ngIf="showAddress">
       <fieldset>
         <label>Street:
           <input [(ngModel)]="customer.address.street">
