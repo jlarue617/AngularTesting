@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CustomerListComponent } from './customer-list.component';
 import { CustomerDetailComponent } from './customer-detail.component';
 import { AddressComponent } from './address.component';
+import { DataService } from './data.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { AddressComponent } from './address.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    DataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
