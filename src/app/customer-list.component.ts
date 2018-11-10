@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Customer } from "./model";
 import { DataService } from './data.service';
+import { LoggerService } from './logger.service';
 
 @Component({
   selector: 'customer-list',
@@ -13,9 +14,10 @@ export class CustomerListComponent implements OnInit {
   customer: Customer;
   customers: Customer[];
 
-  constructor (private dataService : DataService) {  }
+  constructor (private dataService : DataService, private loggerService: LoggerService) {  }
 
   ngOnInit() {
+    this.loggerService.log('Getting Customers...');
     this.customers = this.dataService.getCustomers();
   }
 
