@@ -9,8 +9,9 @@ import { Customer } from "./model";
 })
 
 export class CustomerListComponent {
+
   customer: Customer;
-  customers: Customer[] = [
+  customers: Customer[] = [    
     {
       id: 1,
       name: 'Alex Smith',
@@ -62,4 +63,10 @@ export class CustomerListComponent {
       }
     }
   ];
+
+  shift(increment: number){
+    let index = this.customers.findIndex(c => c === this.customer ) + increment;
+    index = Math.min(this.customers.length - 1, Math.max(0, index));
+    this.customer = this.customers[index];
+  }
 }

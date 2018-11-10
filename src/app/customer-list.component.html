@@ -6,5 +6,5 @@
   </ul>
 </div>
 <div *ngIf="customer">
-  <customer-detail [customer]="customer"></customer-detail>
+  <customer-detail [customer]="customer" (shift)="shift($event)"></customer-detail>
 </div>
