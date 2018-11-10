@@ -13,14 +13,22 @@ import { LoggerService } from './logger.service';
 export class CustomerListComponent implements OnInit {
   customer: Customer;
   customers: Customer[];
+  isBusy = false;
 
   constructor (private dataService : DataService, private loggerService: LoggerService) {  }
 
   ngOnInit() {
-    this.loggerService.log('Getting Customers...');
-    this.customers = this.dataService.getCustomers();
+   this.getCustomers()
   }
 
+  getCustomers()  {
+    this.isBusy = true;
+    this.loggerService.log('Getting Customers...');
+    this.dataService.getCustomers().then(custs => {
+      this.customers = custs;
+      this.isBusy = false;
+    });
+  }
   shift(increment: number){
     let index = this.customers.findIndex(c => c === this.customer ) + increment;
     index = Math.min(this.customers.length - 1, Math.max(0, index));
