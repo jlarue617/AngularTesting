@@ -11,6 +11,5 @@ export class CustomerDetailComponent {
   @Input() customer: Customer;
   showAddress = true;
 
-  regions = ['East', 'South', 'North', 'West', 'Northeast', 'Midwest'];
-  states = ['California', 'Jalisco', 'Quebec', 'Illinois'];
+ 
 }
