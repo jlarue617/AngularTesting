@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { createTestCustomers } from "./test-data";
 import { LoggerService } from "./logger.service";
-import { Customer } from "./model";
+import { Customer } from "./model"; 
 
 @Injectable()
 export class DataService  { 
@@ -9,7 +9,7 @@ export class DataService  {
 
     }
 
-    getCustomers() {    
+    getCustomersPromise() : Promise<Customer[]> {    
         this.loggerService.log('Getting customers as a promise!');
         const customers = createTestCustomers();
 
@@ -20,4 +20,5 @@ export class DataService  {
             }, 1500);
         });
     }
+
 }    

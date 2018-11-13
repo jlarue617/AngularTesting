@@ -24,7 +24,7 @@ export class CustomerListComponent implements OnInit {
   getCustomers()  {
     this.isBusy = true;
     this.loggerService.log('Getting Customers...');
-    this.dataService.getCustomers().then(custs => {
+    this.dataService.getCustomersPromise().then(custs => {
       this.customers = custs;
       this.isBusy = false;
     });
